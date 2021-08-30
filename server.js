@@ -19,4 +19,4 @@ mongoose
   .then(() => console.log("Connected to db successfully"))
   .catch((e) => console.log(e));
 
-app.listen(PORT, () => console.log("Yeeeee"));
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
