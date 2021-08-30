@@ -20,6 +20,7 @@ const exercises = new Schema({
       duration: {
         type: Number,
         trim: true,
+        required: [true, "How long was your exercise"],
       },
       weight: {
         type: Number,
@@ -30,6 +31,10 @@ const exercises = new Schema({
         trim: true,
       },
       sets: {
+        type: Number,
+        trim: true,
+      },
+      distance: {
         type: Number,
         trim: true,
       },
