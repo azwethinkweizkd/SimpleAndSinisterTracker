@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../model");
 
 mongoose.connect("mongodb://localhost:27017/SAndSFitnessTracker", {
   useNewUrlParser: true,
