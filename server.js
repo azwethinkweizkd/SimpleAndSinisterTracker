@@ -13,15 +13,18 @@ app.use(express.static(path.join(__dirname, "public")));
 mongoose.set("debug", true);
 
 mongoose
-  .connect("mongodb://localhost:27017/SAndSFitnessTracker", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  })
+  .connect(
+    process.env.MONGODB_URI || "mongodb://localhost:27017/SAndSFitnessTracker",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    }
+  )
   .then(() => console.log("Connected to db successfully"))
   .catch((e) => console.log(e));
 
-app.use(require("./routes/homeRoute"));
+app.use(require("./routes"));
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
